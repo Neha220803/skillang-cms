@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillang CMS Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>Skillang CMS</h2>
+            </div>
+            <div class="sidebar-menu">
+                <ul>
+                    <li><a href="./dashbaord.html" target="content-frame"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="./universities.html" target="content-frame"><i class="fas fa-university"></i> Universities</a></li>
+                    <li><a href="./study-abroad.html" target="content-frame"><i class="fas fa-globe"></i> Study Abroad</a></li>
+                    <li><a href="./content.html" target="content-frame"><i class="fas fa-file-alt"></i> Content</a></li>
+                    <li><a href="./settings.html" target="content-frame"><i class="fas fa-cog"></i> Settings</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fas fa-user-shield me-2"></i>
+                    <div class="user-details">
+                        <p class="user-name">Admin User</p>
+                        <p class="user-role">Administrator</p>
+                    </div>
+                </div>
+                <div class="logout">
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <iframe name="content-frame" src="./dashbaord.html" frameborder="0" width="100%" height="100%"></iframe>
+        </main>
+    </div>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>

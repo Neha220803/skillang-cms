@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Universities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+         .subsection {
+            display: none;
+        }
+
+        .subsection.active {
+            display: block;
+        }
+
+        .section-actions {
+            margin-bottom: 15px;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .action-btn.primary {
+            background: #007bff;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+
+        .university-card {
+            background: white;
+            width: 90% !important;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .university-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        .university-info h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #007bff;
+        }
+
+        .university-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .university-footer {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #218838;
+        }
+    
+    </style>
+</head>
+<body>
+    <section id="universities" class="content-section active">
+                <div class="section-header">
+                    <h1>University Management</h1>
+                    <p>Manage all university-related information from here.</p>
+                </div>
+                
+                <!-- Pills navigation -->
+                <div class="pill-navigation">
+                    <div class="pill-nav-item active" data-subsection="university-list">University List</div>
+                    <div class="pill-nav-item" data-subsection="logo-upload">Logo Upload</div>
+                    <div class="pill-nav-item" data-subsection="university-details">University Details</div>
+                </div>
+
+                <!-- University List subsection -->
+                <div id="university-list" class="subsection active">
+                    <div class="section-actions">
+                        <button class="action-btn primary"><i class="fas fa-plus"></i> Add New University</button>
+                        <button class="action-btn"><i class="fas fa-download"></i> Export Data</button>
+                    </div>
+                    <div class="university-grid">
+                        <!-- <div class="university-card">
+                            <div class="university-header">
+                                <img src="/api/placeholder/80/80" alt="University Logo" class="university-logo">
+                                <div class="university-actions">
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <div class="university-body">
+                                <h3 class="university-name">Harvard University</h3>
+                                <p class="university-location"><i class="fas fa-map-marker-alt"></i> Cambridge, Massachusetts, USA</p>
+                                <div class="university-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">42</span>
+                                        <span class="stat-label">Programs</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">247</span>
+                                        <span class="stat-label">Applications</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="university-footer">
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div> -->
+                        
+                        <!-- More university cards would go here -->
+                        <div class="university-card">
+                            <div class="university-header">
+                                <img src="https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix" alt="University Logo" class="university-logo">
+                                <div class="university-actions">
+                                    <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                            <div class="university-body">
+                                <h3 class="university-name">Oxford University</h3>
+                                <p class="university-location"><i class="fas fa-map-marker-alt"></i> Oxford, UK</p>
+                                <div class="university-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">38</span>
+                                        <span class="stat-label">Programs</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">218</span>
+                                        <span class="stat-label">Applications</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="university-footer">
+                                <button class="view-details">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logo Upload subsection -->
+                <div id="logo-upload" class="subsection">
+    <div class="section-actions">
+        <button class="action-btn primary" id="upload-logo-btn"><i class="fas fa-upload"></i> Upload New Logo</button>
+        <input type="file" id="logo-input" style="display: none;">
+    </div>
+    <div class="placeholder-content">
+        <p>University Logo Upload interface will be displayed here.</p>
+        <div>
+
+            <img id="preview-logo" src="https://logowik.com/content/uploads/images/university-of-oxford9718.jpg" 
+             alt="Uploaded Logo" class="university-logo" style="width: 150px; height: auto; display: block; margin-top: 10px;">
+    <h3 class="text-start">Oxford</h3>
+        </div>
+        
+            </div>
+</div>
+
+                <!-- University Details subsection -->
+                <div id="university-details" class="subsection">
+                    <div class="section-actions">
+                        <button class="action-btn primary"><i class="fas fa-edit"></i> Edit Details</button>
+                    </div>
+                    <div class="placeholder-content">
+                        <p>University Detail's Editing interface will be displayed here.</p>
+                   
+                    <div class="university-card">
+    <div class="university-header">
+        <img src="https://www.ox.ac.uk/sites/files/oxford/styles/ow_large_feature/s3/field/field_image_main/b_AllSoulsquad.jpg?itok=tTcH-5ix" 
+             alt="University Logo" class="university-logo">
+        <div class="university-info">
+            <h2>Oxford University</h2>
+            <p><i class="fas fa-map-marker-alt"></i> Oxford, UK</p>
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Established Year</td>
+            <td>1096</td>
+        </tr>
+        <tr>
+            <td>Ranking</td>
+            <td>#1 (QS World Ranking)</td>
+        </tr>
+        <tr>
+            <td>List of Courses</td>
+            <td>Computer Science, Business, Law</td>
+        </tr>
+        <tr>
+            <td>Tuition Fees</td>
+            <td>$50,000 / year</td>
+        </tr>
+        <tr>
+            <td>Intake Periods</td>
+            <td>Fall (September), Spring (January)</td>
+        </tr>
+        <tr>
+            <td>Application Deadline</td>
+            <td>June 1st, 2024</td>
+        </tr>
+        <tr>
+            <td>Acceptance Rate</td>
+            <td>5%</td>
+        </tr>
+        <tr>
+            <td>Scholarships Available</td>
+            <td>Yes (Merit-based, Need-based)</td>
+        </tr>
+        <tr>
+            <td>Job Placement Rate</td>
+            <td>90%</td>
+        </tr>
+    </table>
+ </div>
+                </div>
+            </section>
+
+            <!-- Study Abroad Section with Pills -->
+            <section id="study-abroad" class="content-section">
+                <div class="section-header">
+                    <h1>Study Abroad Programs</h1>
+                    <p>Manage all study abroad programs and applications.</p>
+                </div>
+                
+                <!-- Pills navigation -->
+                <div class="pill-navigation">
+                    <div class="pill-nav-item active" data-subsection="country-list">Country List</div>
+                    <div class="pill-nav-item" data-subsection="program-listings">Program Listings</div>
+                    <div class="pill-nav-item" data-subsection="application-management">Application Management</div>
+                </div>
+
+                <!-- Country List subsection -->
+                <div id="country-list" class="subsection active">
+                    <div class="section-actions">
+                        <button class="action-btn primary"><i class="fas fa-plus"></i> Add New Country</button>
+                    </div>
+                    <div class="placeholder-content">
+                        <p>Country list management interface will be displayed here with the ability to add country-specific content like study abroad in [country], title, subtitle, overview, quick facts, etc.</p>
+                    </div>
+                </div>
+
+                <!-- Program Listings subsection -->
+                <div id="program-listings" class="subsection">
+                    <div class="section-actions">
+                        <button class="action-btn primary"><i class="fas fa-plus"></i> Add New Program</button>
+                    </div>
+                    <div class="placeholder-content">
+                        <p>Program listings management interface will be displayed here.</p>
+                    </div>
+                </div>
+
+                <!-- Application Management subsection -->
+                <div id="application-management" class="subsection">
+                    <div class="section-actions">
+                        <button class="action-btn primary"><i class="fas fa-list"></i> View All Applications</button>
+                    </div>
+                    <div class="placeholder-content">
+                        <p>Application management interface will be displayed here.</p>
+                    </div>
+                </div>
+            </section>
+            
+    <script >
+        document.addEventListener("DOMContentLoaded", function () {
+    const pills = document.querySelectorAll(".pill-nav-item");
+    const subsections = document.querySelectorAll(".subsection");
+
+    pills.forEach((pill) => {
+        pill.addEventListener("click", function () {
+            // Get the parent section of the clicked pill
+            const parentSection = this.closest(".content-section");
+
+            // Remove 'active' class from all pills and subsections in the same section
+            parentSection.querySelectorAll(".pill-nav-item").forEach((p) => p.classList.remove("active"));
+            parentSection.querySelectorAll(".subsection").forEach((sub) => sub.classList.remove("active"));
+
+            // Add 'active' class to the clicked pill
+            this.classList.add("active");
+
+            // Get the corresponding subsection and activate it
+            const subsectionId = this.getAttribute("data-subsection");
+            parentSection.querySelector(`#${subsectionId}`).classList.add("active");
+        });
+    });
+});
+
+        
+    </script>
+</body>
+</html>

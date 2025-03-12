@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+    <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome to your Skillang CMS. View key metrics and statistics.</p>
+                </div>
+                
+                <div class="metrics-container">
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-university"></i></div>
+                        <div class="metric-details">
+                            <h3>Universities</h3>
+                            <p class="metric-value">127</p>
+                            <p class="metric-change positive">+5 this month</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-globe"></i></div>
+                        <div class="metric-details">
+                            <h3>Study Programs</h3>
+                            <p class="metric-value">342</p>
+                            <p class="metric-change positive">+12 this month</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-flag"></i></div>
+                        <div class="metric-details">
+                            <h3>Countries</h3>
+                            <p class="metric-value">45</p>
+                            <p class="metric-change positive">+2 this month</p>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="metric-details">
+                            <h3>Degrees Offered</h3>
+                            <p class="metric-value">182</p>
+                            <p class="metric-change positive">+7 this month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="grid-item countries-overview">
+                        <h3>Universities by Country</h3>
+                        <div class="country-stats">
+                            <div class="country-item">
+                                <div class="country-name">USA</div>
+                                <div class="country-bar">
+                                    <div class="bar-fill" style="width: 85%;"></div>
+                                    <span class="bar-value">42 Unis</span>
+                                </div>
+                            </div>
+                            <div class="country-item">
+                                <div class="country-name">UK</div>
+                                <div class="country-bar">
+                                    <div class="bar-fill" style="width: 72%;"></div>
+                                    <span class="bar-value">36 Unis</span>
+                                </div>
+                            </div>
+                            <div class="country-item">
+                                <div class="country-name">Canada</div>
+                                <div class="country-bar">
+                                    <div class="bar-fill" style="width: 65%;"></div>
+                                    <span class="bar-value">22 Unis</span>
+                                </div>
+                            </div>
+                            <div class="country-item">
+                                <div class="country-name">Australia</div>
+                                <div class="country-bar">
+                                    <div class="bar-fill" style="width: 58%;"></div>
+                                    <span class="bar-value">15 Unis</span>
+                                </div>
+                            </div>
+                            <div class="country-item">
+                                <div class="country-name">Germany</div>
+                                <div class="country-bar">
+                                    <div class="bar-fill" style="width: 45%;"></div>
+                                    <span class="bar-value">12 Unis</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid-item quick-actions">
+                        <h3>Quick Actions</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-plus"></i> Add University</button>
+                            <button class="action-btn"><i class="fas fa-plus"></i> New Program</button>
+                            <button class="action-btn"><i class="fas fa-file"></i> Create Article</button>
+                            <button class="action-btn"><i class="fas fa-upload"></i> Upload Media</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</body>
+</html>

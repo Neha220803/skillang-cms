@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="stylesheet" href="./css/styles.css">
+    <title>Study Abroad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+
+        .subsection {
+            display: none;
+        }
+
+        .subsection.active {
+            display: block;
+        }
+
+        .section-actions {
+            margin-bottom: 15px;
+        }
+
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .action-btn.primary {
+            background: #007bff;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section id="study-abroad" class="content-section active">
+        <div class="section-header">
+            <h1>Study Abroad Programs</h1>
+            <p>Manage all study abroad programs and applications.</p>
+        </div>
+
+        <!-- Pills navigation -->
+        <div class="pill-navigation">
+            <div class="pill-nav-item active" data-subsection="country-list">Country List</div>
+            <div class="pill-nav-item" data-subsection="program-listings">Program Listings</div>
+        </div>
+
+        <!-- Country List subsection -->
+        <div id="country-list" class="subsection active">
+            <div class="section-actions">
+                <button class="action-btn primary"><i class="fas fa-plus"></i> Add New Country</button>
+            </div>
+            
+            <!-- Table of Contents for Countries -->
+            <h3>Country List</h3>
+            <table>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>University</th>
+            <th>Program Name</th>
+            <th>Degree Type</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>USA</td>
+            <td>Harvard University</td>
+            <td>Business Administration</td>
+            <td>Master's</td>
+            <td>2 Years</td>
+        </tr>
+        <tr>
+            <td>USA</td>
+            <td>Stanford University</td>
+            <td>Computer Science</td>
+            <td>Bachelor's</td>
+            <td>4 Years</td>
+        </tr>
+        <tr>
+            <td>Canada</td>
+            <td>University of Toronto</td>
+            <td>Computer Science</td>
+            <td>Bachelor's</td>
+            <td>4 Years</td>
+        </tr>
+        <tr>
+            <td>Canada</td>
+            <td>McGill University</td>
+            <td>Data Science</td>
+            <td>Master's</td>
+            <td>2 Years</td>
+        </tr>
+        <tr>
+            <td>Germany</td>
+            <td>Technical University of Munich</td>
+            <td>Mechanical Engineering</td>
+            <td>Bachelor's</td>
+            <td>3 Years</td>
+        </tr>
+        <tr>
+            <td>Germany</td>
+            <td>Humboldt University</td>
+            <td>Artificial Intelligence</td>
+            <td>Master's</td>
+            <td>2 Years</td>
+        </tr>
+        <tr>
+            <td>UK</td>
+            <td>Oxford University</td>
+            <td>Law</td>
+            <td>Bachelor's</td>
+            <td>3 Years</td>
+        </tr>
+        <tr>
+            <td>UK</td>
+            <td>University of Cambridge</td>
+            <td>Medicine</td>
+            <td>Master's</td>
+            <td>5 Years</td>
+        </tr>
+        <tr>
+            <td>Australia</td>
+            <td>University of Melbourne</td>
+            <td>Psychology</td>
+            <td>Bachelor's</td>
+            <td>4 Years</td>
+        </tr>
+        <tr>
+            <td>Australia</td>
+            <td>Australian National University</td>
+            <td>Environmental Science</td>
+            <td>Master's</td>
+            <td>2 Years</td>
+        </tr>
+    </tbody>
+</table>
+
+        </div>
+
+        <!-- Program Listings subsection -->
+        <div id="program-listings" class="subsection">
+            <div class="section-actions">
+                <button class="action-btn primary"><i class="fas fa-plus"></i> Add New Program</button>
+            </div>
+            <div class="placeholder-content">
+                <p>Program listings management interface will be displayed here.</p>
+            </div>
+
+            <!-- Table of Contents for Programs -->
+            <h3>Program Listings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Program Name</th>
+                        <th>University</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Business Administration</td>
+                        <td>Harvard University</td>
+                        <td>USA</td>
+                    </tr>
+                    <tr>
+                        <td>Computer Science</td>
+                        <td>University of Toronto</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Engineering</td>
+                        <td>Technical University of Munich</td>
+                        <td>Germany</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="./js/main.js">
+        
+    </script>
+</body>
+</html>
